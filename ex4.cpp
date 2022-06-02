@@ -4,17 +4,21 @@
 
 using namespace std;
 
-bool res(string input){
+bool res(string input)
+{
 	stack <char> brack;
-	for (char c : input){
-		switch (c){
+	for (char c : input)
+	{
+		switch (c)
+		{
 		case '(': brack.push(')'); break;
 		case '[': brack.push(']'); break;
 		case '{': brack.push('}'); break;
 		case ')':
 		case ']':
 		case '}':
-		    if (brack.empty() or brack.top() != c){
+		    if (brack.empty() or brack.top() != c)
+			{
 		    	return false;
 		    }
 		    brack.pop();
@@ -30,7 +34,8 @@ int main()
 {
 	string input;
 	cin >> input;
-	if (res(input)){
+	if (res(input))
+	{
 		cout << "YES";
 	} else {
 		cout << "NO";
